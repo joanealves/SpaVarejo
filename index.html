@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle financeiro</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"
+        type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="content"></div>
+    <header>
+        <div class="container-menu">
+            <img src="./image.png" alt="Imagem Logo">
+            <div class="menubt">
+                <h1>Controle financeiro</h1>
+            </div>
+            <div class="responsive-menu">
+                <div class="menu-hamburguer">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li class="fechar">X</li>
+                <li class="cadastro">
+                    <a href="">Cadastro de transações</a>
+                </li>
+                <p class="traço"> l</p>
+                <li class="limpar">
+                    <a type="button" onclick="handleClear()" id="clearDados" class="headerBtn">
+                        Limpar dados
+                    </a>
+                </li>
+                <p class="traço"> l</p>
+                <li class="configuracoes">
+                    <a type="button" onclick="saveServer()" class="headerBtn">
+                        Salvar no servidor
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="caixa">
+            <h2 class="novaTransacao">Nova transação </h2>
+            <div class="colunas">
+                <div class="formItem">
+                    <label> Tipo de transação </label>
+                    <select id="transactionType">
+                        <option value="compra">Compra</option>
+                        <option value="venda">Venda</option>
+                    </select>
+                </div>
+                <div class="mercado">
+                    <label for="mercado">Nome da mercadoria</label>
+                    <input id="mercadoriaName" placeholder="Mercadoria">
+                    <p id="requiredMercadoria"></p>
+                </div>
+                <div class="formItem mt">
+                    <label class="labelValor" for="Valor">Valor</label>
+                    <input id="mercadoriaValor" placeholder="R$ 0,00">
+                    <p id="requiredValue"></p>
+                </div>
+            </div>
+            <div class="butao">
+                <button id="addTransaction">Adicionar transação</button>
+            </div>
+        </section>
+        <section class="sectionD">
+            <div id="clear"></div>
+            <h2 class="extract">Extrato de transações</h2>
+            <table id="table">
+            </table>
+            <div class="inline-block">
+                <p class="bold">Total</p>
+                <p id="totalPrice" class="bold"> R$ 12.909,99</p>
+            </div>
+            <p id='hasProfit' class="lucro">[LUCRO]</p>
+        </section>
+    </main>
+    <script src="Index.js"></script>
+</body>
+
+</html>
